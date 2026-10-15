@@ -1,0 +1,254 @@
+.dash-page { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.dash-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.metric-card { background: #f9f9f8; border-radius: 8px; padding: 12px 14px; }
+.metric-label { font-size: 12px; color: #888; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+.metric-label i { font-size: 13px; }
+.metric-val { font-size: 22px; font-weight: 600; color: #1a1a18; }
+.dash-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dash-card { background: #fff; border: 1px solid #e8e8e5; border-radius: 10px; padding: 1rem 1.25rem; }
+.dash-card-title { font-size: 13px; font-weight: 500; color: #1a1a18; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+.dash-card-title i { font-size: 14px; color: #1D9E75; }
+.cat-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+.cat-legend span { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #666; }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.tc-tag { background: #E1F5EE; color: #085041; border-radius: 20px; font-weight: 500; }
+.tc-tag small { opacity: .6; font-weight: 400; }
+.mood-row { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
+.mood-row i { font-size: 15px; color: #1D9E75; width: 20px; }
+.mood-lbl { font-size: 12px; color: #666; width: 28px; }
+.mood-bar { flex: 1; background: #f4f4f2; border-radius: 4px; height: 8px; overflow: hidden; }
+.mood-fill { height: 100%; background: #1D9E75; border-radius: 4px; }
+.mood-n { font-size: 12px; color: #aaa; width: 20px; }
+.kb-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.kb-bar-lbl { font-size: 12px; color: #666; width: 36px; text-align: right; }
+.kb-bar { flex: 1; background: #f4f4f2; border-radius: 4px; height: 10px; overflow: hidden; }
+.kb-bar-fill { height: 100%; background: #1D9E75; border-radius: 4px; }
+.kb-bar-n { font-size: 12px; color: #aaa; width: 20px; }
+/* ========================================
+   期間切り替え
+======================================== */
+
+.dash-period-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.period-tabs {
+  display: inline-flex;
+  padding: 3px;
+  background: #f1f3f2;
+  border-radius: 8px;
+}
+
+.period-tabs button {
+  border: none;
+  background: transparent;
+  padding: 7px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+}
+
+.period-tabs button:hover {
+  color: #333;
+}
+
+.period-tabs button.active {
+  background: #fff;
+  color: #1d7a5c;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+
+/* ========================================
+   前後移動
+======================================== */
+
+.period-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.period-nav strong {
+  min-width: 150px;
+  text-align: center;
+  font-size: 17px;
+  color: #333;
+}
+
+.period-nav button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e7e6;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #777;
+}
+
+.period-nav button:hover {
+  background: #f5f7f6;
+}
+
+
+/* ========================================
+   ミニカレンダー
+======================================== */
+
+.dash-calendar {
+  margin-bottom: 18px;
+}
+
+.mini-cal-dow,
+.mini-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.mini-cal-dow {
+  margin-bottom: 6px;
+}
+
+.mini-cal-dow div {
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+}
+
+.mini-cal-cell {
+  min-height: 56px;
+  padding: 7px;
+  border-top: 1px solid #f0f1f0;
+  text-align: center;
+}
+
+.mini-cal-cell.blank {
+  background: #fafafa;
+}
+
+.mini-cal-day {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #555;
+}
+
+.mini-cal-cell.today .mini-cal-day {
+  background: #1d9e75;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.mini-cal-dots {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.mini-cal-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+
+/* ========================================
+   週間表示
+======================================== */
+
+.week-record-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.week-record-day {
+  min-height: 90px;
+  padding: 12px 5px;
+  background: #f8faf9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.week-record-day > span {
+  display: block;
+  font-size: 11px;
+  color: #999;
+}
+
+.week-record-day strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  color: #333;
+}
+
+.week-record-count {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 6px;
+  background: #e8f5f0;
+  color: #1d7a5c;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+
+/* ========================================
+   空データ
+======================================== */
+
+.dash-empty {
+  padding: 30px 10px;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width: 700px) {
+
+  .period-tabs {
+    width: 100%;
+  }
+
+  .period-tabs button {
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mini-cal-cell {
+    min-height: 42px;
+    padding: 4px 2px;
+  }
+
+  .week-record-grid {
+    gap: 3px;
+  }
+
+  .week-record-day {
+    min-height: 72px;
+    padding: 8px 2px;
+  }
+
+  .week-record-count {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}

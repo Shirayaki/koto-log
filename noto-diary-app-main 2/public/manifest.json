@@ -1,0 +1,9 @@
+{
+  "short_name": "noto",
+  "name": "noto - 日記アプリ",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1D9E75",
+  "background_color": "#ffffff"
+}

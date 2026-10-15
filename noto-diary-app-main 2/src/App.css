@@ -1,0 +1,162 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
+  overflow: hidden;
+  background: #f9f9f8;
+}
+.app-main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+}
+/* Global Button Animation */
+button {
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: 2px solid #1D9E75;
+  outline-offset: 2px;
+}
+
+/* FAB Button - Floating Action Button */
+.fab-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1D9E75;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  font-size: 24px;
+  border: none;
+  font-weight: bold;
+}
+
+.fab-button:hover {
+  background: #1a8a62;
+  box-shadow: 0 6px 16px rgba(29, 158, 117, 0.6);
+  transform: scale(1.1);
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+
+.fab-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .fab-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+/* ハンバーガーボタン（PC では非表示） */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #1a1a18;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .app-shell {
+    grid-template-columns: 1fr;  /* サイドバーを隠す */
+  }
+
+  /* ハンバーガーボタンを表示 */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* サイドバーをオーバーレイ化 */
+  .sidebar {
+    position: fixed;
+    left: -200px;  /* 初期状態：隠れている */
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: #f4f4f2;
+    border-right: 1px solid #e8e8e5;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  /* サイドバーが開いている状態 */
+  .sidebar.open {
+    left: 0;  /* スライドイン */
+  }
+
+  /* オーバーレイ（背景を暗くする） */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+
+/* スマホ：ハンバーガーメニューと見出しの重なりを防止 */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    top: 8px;
+    left: 8px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-main {
+    padding-top: 60px;
+    box-sizing: border-box;
+    min-height: 0;
+  }
+}

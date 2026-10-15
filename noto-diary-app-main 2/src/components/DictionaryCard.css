@@ -1,0 +1,197 @@
+/* =========================
+   Dictionary Card
+   ========================= */
+
+.dict-card {
+  width: 100%;
+  min-height: 150px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e8e8e5;
+  border-radius: 10px;
+
+  padding: 28px 36px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 36px;
+}
+
+
+/* =========================
+   Book Icon
+   ========================= */
+
+.dict-book-icon {
+  width: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.dict-book-icon i {
+  font-size: 76px;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+
+/* =========================
+   Common Label
+   ========================= */
+
+.dict-label {
+  font-size: 14px;
+  color: #555555;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   Page Section
+   ========================= */
+
+.dict-page-section {
+  min-width: 250px;
+}
+
+.dict-page-value {
+  font-size: 42px;
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  color: #111111;
+
+  white-space: nowrap;
+}
+
+.dict-page-value span {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+
+/* =========================
+   Knowledge Section
+   ========================= */
+
+.dict-knowledge-section {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  column-gap: 10px;
+  row-gap: 0;
+
+  padding-left: 20px;
+}
+
+.dict-knowledge-section .dict-label {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.dict-knowledge-value {
+  font-size: 42px;
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  color: #111111;
+
+  white-space: nowrap;
+}
+
+.dict-knowledge-value span {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+.dict-knowledge-message {
+  font-size: 18px;
+  color: #333333;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   Small Description
+   ========================= */
+
+.dict-sub-text {
+  margin-top: 6px;
+
+  font-size: 11px;
+  color: #999999;
+}
+
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 768px) {
+  .dict-card {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .dict-book-icon {
+    width: 80px;
+  }
+
+  .dict-book-icon i {
+    font-size: 60px;
+  }
+
+  .dict-page-value,
+  .dict-knowledge-value {
+    font-size: 34px;
+  }
+
+  .dict-knowledge-message {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .dict-card {
+    padding: 20px;
+
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .dict-book-icon {
+    width: 60px;
+  }
+
+  .dict-book-icon i {
+    font-size: 48px;
+  }
+
+  .dict-page-section {
+    min-width: 0;
+  }
+
+  .dict-page-value,
+  .dict-knowledge-value {
+    font-size: 30px;
+  }
+
+  .dict-knowledge-section {
+    padding-left: 0;
+    width: 100%;
+  }
+}
