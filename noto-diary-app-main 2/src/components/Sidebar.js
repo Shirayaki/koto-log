@@ -57,7 +57,7 @@ export default function Sidebar({
           <div className="sb-label">メニュー</div>
 
           {[
-            { id: 'dash', label: 'ダッシュボード', icon: 'ダッシュボード.svg' },
+            { id: 'dash', label: 'ダッシュボード', icon: 'ダッシュボード.svg'.normalize('NFD') },
             { id: 'write', icon: '日記を書く.svg', label: '日記を書く' },
             { id: 'list', icon: '日記一覧.svg', label: '日記一覧' },
             { id: 'search', icon: '検索・フィルター.svg', label: '検索・フィルター' },
